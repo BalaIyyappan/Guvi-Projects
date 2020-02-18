@@ -25,5 +25,17 @@ button {
   #List{
     display: flex;
     justify-content: center;
+  }   
+ul{
+    display: flex;
+    justify-content: space-between;
+}  
+li{
+        width: fit-content;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        
+        border: outset;
+        border-width: 12px;
   }
-  
