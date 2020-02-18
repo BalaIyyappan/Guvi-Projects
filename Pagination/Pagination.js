@@ -554,19 +554,24 @@ function numPages()
 
 window.onload = function() {
     changePage(1);
-  //   var row=document.createElement("nav");
-  //   document.body.appendChild(row);
-  //   var ul=document.createElement("ul");
-  //   ul.setAttribute("class","pagination");
-  //   row.appendChild(ul);
-  //   var li=document.createElement("li");
-  //   li.setAttribute("class","page-item");
-  //   ul.appendChild(li);
-  //   for(j=1;j<=obj.length/2;j++){
-  //   var a=document.createElement("a");
-  //   a.setAttribute("href","");
-  //   a.textContent=j;
-  //   a.setAttribute("class","page-link");
-  //   li.appendChild(a);
-  // }
+    var row=document.createElement("div");
+    row.setAttribute("class","nav")
+    document.body.appendChild(row);
+    var ul=document.createElement("ul");
+    ul.setAttribute("class","nav_ul");
+    row.appendChild(ul);
+    
+    for(j=1;j<=obj.length/records_per_page;j++){
+    var li=document.createElement("li");
+    li.setAttribute("class","li-item");
+    ul.appendChild(li);
+    var a=document.createElement("a");
+    let h="javascript:page("+j+")";
+    a.setAttribute("href",h);
+    a.textContent=j;
+    a.setAttribute("class","page-link");
+    li.appendChild(a);
+    var br=document.createElement("br");
+    ul.appendChild(br);
+  }
 };
