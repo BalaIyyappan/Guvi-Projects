@@ -1,0 +1,16 @@
+#div1{
+	float:left;
+	margin:10px;
+}
+#div2{
+	float: right
+}
+body{
+	background-color: grey;
+}
+#submit{
+	border-radius:5px;
+	border-style: none; 
+	background-color: blue;
+	color: white;
+}
