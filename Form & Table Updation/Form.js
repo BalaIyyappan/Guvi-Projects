@@ -5,6 +5,7 @@ let div1=document.createElement("div");
 div1.setAttribute('id','div1');
 document.body.appendChild(div1);
 let form=document.createElement("form");
+form.setAttribute('id','form')
 div1.appendChild(form);
 //Name input
 let divname=document.createElement("div");
@@ -26,7 +27,7 @@ let lb2=document.createElement("label");
 lb2.innerHTML="E-Mail";
 divmail.appendChild(lb2);
 let input2=document.createElement('input');
-input2.setAttribute("type",'email');
+input2.setAttribute("type",'text');
 input2.setAttribute("class",'form-control');
 input2.setAttribute("id",'Mail');
 divmail.appendChild(input2);
@@ -282,16 +283,7 @@ tr.appendChild(del_btn);
 
 
 let row=1;
-//Edit Button On Table
-let edit_tab=document.createElement("Button");
-edit_tab.textContent="Edit";
-edit_tab.setAttribute("id",'edit_table');
-edit_tab.setAttribute("onclick",'edit()');
-//Delete Button On Table
-let del=document.createElement("Button");
-del.textContent="Delete";
-del.setAttribute("id",'delete_table');
-del.setAttribute("onclick",'delete()');
+
 
 
 function add(){
@@ -343,6 +335,16 @@ function add(){
 			c8.innerHTML=f_mstatus[j].value;
 		}
 	}
+	//Edit Button On Table
+	let edit_tab=document.createElement("Button");
+	edit_tab.textContent="Edit";
+	edit_tab.setAttribute("id",'edit_table');
+	edit_tab.setAttribute("onclick",'edit()');
+	//Delete Button On Table
+	let del=document.createElement("Button");
+	del.textContent="Delete";
+	del.setAttribute("id",'delete_table');
+	del.setAttribute("onclick",'delete()');
 	c10.appendChild(edit_tab);
 	c11.appendChild(del);
 
@@ -355,5 +357,6 @@ function add(){
 
 
 	row++;
+	// document.getElementById("form").reset();
 
 }
