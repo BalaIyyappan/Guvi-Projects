@@ -373,6 +373,8 @@ console.log(r);
 function del(r){
 	let del_op=document.getElementById("display");
 	// console.log(del_op);
-	del_op.deleteRow(r);
-	row=row-1;
+	if(confirm("Are You Sure You Want To Delete This Row)){
+		   del_op.deleteRow(r);
+	           row=row-1;
+	   }
 }
