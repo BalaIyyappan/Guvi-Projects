@@ -27,7 +27,7 @@ let lb2=document.createElement("label");
 lb2.innerHTML="E-Mail";
 divmail.appendChild(lb2);
 let input2=document.createElement('input');
-input2.setAttribute("type",'text');
+input2.setAttribute("type",'mail');
 input2.setAttribute("class",'form-control');
 input2.setAttribute("id",'Mail');
 divmail.appendChild(input2);
