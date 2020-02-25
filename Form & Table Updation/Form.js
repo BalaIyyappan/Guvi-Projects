@@ -27,7 +27,7 @@ let lb2=document.createElement("label");
 lb2.innerHTML="E-Mail";
 divmail.appendChild(lb2);
 let input2=document.createElement('input');
-input2.setAttribute("type",'mail');
+input2.setAttribute("type",'email');
 input2.setAttribute("class",'form-control');
 input2.setAttribute("id",'Mail');
 divmail.appendChild(input2);
@@ -278,15 +278,14 @@ tr.appendChild(edit_btn);
 let del_btn=document.createElement("td");
 del_btn.innerHTML="Delete";
 tr.appendChild(del_btn);
-
+document.getElementById("Name").focus();
 };
 
 
 let row=1;
 
-
-
 function add(){
+	let row_no=row;
 	let f_name=document.getElementById("Name").value;
 	let f_mail=document.getElementById("Mail").value;
 	let f_pass=document.getElementById("Password").value;
@@ -339,12 +338,12 @@ function add(){
 	let edit_tab=document.createElement("Button");
 	edit_tab.textContent="Edit";
 	edit_tab.setAttribute("id",'edit_table');
-	edit_tab.setAttribute("onclick",'edit()');
+	edit_tab.setAttribute("onclick",'edit('+row_no+')');
 	//Delete Button On Table
 	let del=document.createElement("Button");
 	del.textContent="Delete";
 	del.setAttribute("id",'delete_table');
-	del.setAttribute("onclick",'delete()');
+	del.setAttribute("onclick",'del('+row_no+')');
 	c10.appendChild(edit_tab);
 	c11.appendChild(del);
 
@@ -354,9 +353,26 @@ function add(){
 		}
 	}
 
-
+//To stop form from refreshing
+var formsubmit = document.getElementById("submit");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
 
 	row++;
-	// document.getElementById("form").reset();
+	
+	document.getElementById("form").reset();
+	document.getElementById("Name").focus();
+}
 
+//Function For edit Button
+function edit(r){
+console.log(r);
+}
+
+//Function For Delete Button
+function del(r){
+	let del_op=document.getElementById("display");
+	// console.log(del_op);
+	del_op.deleteRow(r);
+	row=row-1;
 }
